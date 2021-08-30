@@ -95,11 +95,11 @@ function createLightHelper(light) {
 let renderer = createRenderer();
 let scene = createScene();
 let camera = createCamera();
-let axesHelper = createAxesHelper();
+// let axesHelper = createAxesHelper();
 let cube = createCube();
-let sphere = createSphere();
+// let sphere = createSphere();
 let light = createLight();
-let lightHelper = createLightHelper(light);
+// let lightHelper = createLightHelper(light);
 
 let controls = new orbit(camera, renderer.domElement);
 
@@ -107,7 +107,7 @@ light.position.x = 10;
 light.position.y = 10;
 light.position.z = 10;
 
-sphere.position.x = 20;
+// sphere.position.x = 20;
 
 let cubes = [];
 let cubeCount = 500;
@@ -120,8 +120,9 @@ for (let i = 1; i < cubeCount; i += 1) {
   cubes.push(c);
 }
 
-scene.add(axesHelper);
-scene.add(cube, sphere, light, lightHelper, ...cubes);
+// scene.add(axesHelper);
+// scene.add(cube, sphere, light, lightHelper, ...cubes);
+scene.add(cube, light, ...cubes);
 
 renderer.render(scene, camera);
 
